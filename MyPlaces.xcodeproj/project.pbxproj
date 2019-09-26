@@ -14,6 +14,7 @@
 		5B48B80F233CEE7F00C9E5C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48B80E233CEE7F00C9E5C5 /* MainViewController.swift */; };
 		5B48B811233D28E300C9E5C5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */; };
 		5B48B813233D31F000C9E5C5 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48B812233D31F000C9E5C5 /* PlaceModel.swift */; };
+		5B48B815233D497900C9E5C5 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48B814233D497900C9E5C5 /* NewPlaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5B48B80E233CEE7F00C9E5C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5B48B812233D31F000C9E5C5 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		5B48B814233D497900C9E5C5 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				5B48B7FC233CEA5600C9E5C5 /* AppDelegate.swift */,
 				5B48B80E233CEE7F00C9E5C5 /* MainViewController.swift */,
+				5B48B814233D497900C9E5C5 /* NewPlaceViewController.swift */,
 				5B48B812233D31F000C9E5C5 /* PlaceModel.swift */,
 				5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */,
 				5B48B800233CEA5600C9E5C5 /* Main.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				5B48B811233D28E300C9E5C5 /* CustomTableViewCell.swift in Sources */,
 				5B48B813233D31F000C9E5C5 /* PlaceModel.swift in Sources */,
+				5B48B815233D497900C9E5C5 /* NewPlaceViewController.swift in Sources */,
 				5B48B7FD233CEA5600C9E5C5 /* AppDelegate.swift in Sources */,
 				5B48B80F233CEE7F00C9E5C5 /* MainViewController.swift in Sources */,
 			);
