@@ -27,7 +27,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,7 +65,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
         cell.typeLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
 
-
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
 
@@ -74,6 +72,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
     }
     
     // MARK: Table view delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -87,8 +89,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
         return [deleteAction]
     }
 
-
-    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,13 +105,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
         }
     }
     
-
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         
         newPlaceVC.savePlace()
-        
         tableView.reloadData()
     }
     
@@ -121,6 +119,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
     }
     
     @IBAction func reversedSorting(_ sender: Any) {
+        
         ascendingSorting.toggle()
         
         if ascendingSorting {
@@ -133,6 +132,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
     }
     
     private func sorting() {
+        
         if segmentedControl.selectedSegmentIndex == 0 {
             places = places.sorted(byKeyPath: "date", ascending: ascendingSorting)
         } else {
