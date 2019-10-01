@@ -46,24 +46,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
         if isFiltering {
             return filterPlaces.count
         }
-        return places.isEmpty ? 0 : places.count
+        return places.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-
-        var place = Place()
         
-        if isFiltering {
-            place = filterPlaces[indexPath.row]
-        } else {
-            place = places[indexPath.row]
-        }
+        let place = isFiltering ? filterPlaces[indexPath.row] : places[indexPath.row]
 
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
+        
+        for index in 0..<5 {
+            cell.stars[index].image = index < Int(place.rating) ? #imageLiteral(resourceName: "filledStar") : #imageLiteral(resourceName: "emptyStar")
+        }
 
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
@@ -72,11 +70,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
     }
     
     // MARK: Table view delegate
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
+        
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let place = places[indexPath.row]
@@ -94,12 +88,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITabBarDeleg
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place = filterPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            let place = isFiltering ? filterPlaces[indexPath.row] : places[indexPath.row]
+            
             let newPlaceVC = segue.destination as! NewPlaceViewController
             newPlaceVC.currentPlace = place
         }

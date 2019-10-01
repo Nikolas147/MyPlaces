@@ -17,6 +17,7 @@
 		5B48B811233D28E300C9E5C5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */; };
 		5B48B813233D31F000C9E5C5 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48B812233D31F000C9E5C5 /* PlaceModel.swift */; };
 		5B48B815233D497900C9E5C5 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48B814233D497900C9E5C5 /* NewPlaceViewController.swift */; };
+		5B79B92B2343ABC400397813 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B79B92A2343ABC400397813 /* MapViewController.swift */; };
 		5BA54BAC233E7F8200C654F0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA54BAB233E7F8200C654F0 /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +30,11 @@
 		5B48B803233CEA5800C9E5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B48B806233CEA5800C9E5C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B48B808233CEA5800C9E5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B48B80E233CEE7F00C9E5C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5B48B80E233CEE7F00C9E5C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
+		5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = ../../CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5B48B812233D31F000C9E5C5 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		5B48B814233D497900C9E5C5 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		5B79B92A2343ABC400397813 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5BA54BAB233E7F8200C654F0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		F4D33B323B99BE38D2765C94 /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		FB3B279E2AFD9FD1CBD4843A /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,18 +82,75 @@
 			isa = PBXGroup;
 			children = (
 				5B48B7FC233CEA5600C9E5C5 /* AppDelegate.swift */,
-				5B48B80E233CEE7F00C9E5C5 /* MainViewController.swift */,
-				5B48B814233D497900C9E5C5 /* NewPlaceViewController.swift */,
-				5B48B812233D31F000C9E5C5 /* PlaceModel.swift */,
-				5BA54BAB233E7F8200C654F0 /* StorageManager.swift */,
-				5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */,
-				5B2D60EB234206C1003E166F /* RatingControl.swift */,
+				5B79B92C2343B17D00397813 /* Main */,
+				5B78CA112343B29900A91487 /* NewPlace */,
+				5B78CA122343B2A500A91487 /* Map */,
+				5B78CA0E2343B24800A91487 /* Models */,
+				5B78CA102343B28C00A91487 /* Realm */,
+				5B78CA0F2343B28400A91487 /* Views */,
 				5B48B800233CEA5600C9E5C5 /* Main.storyboard */,
 				5B48B803233CEA5800C9E5C5 /* Assets.xcassets */,
 				5B48B805233CEA5800C9E5C5 /* LaunchScreen.storyboard */,
 				5B48B808233CEA5800C9E5C5 /* Info.plist */,
 			);
 			path = MyPlaces;
+			sourceTree = "<group>";
+		};
+		5B78CA0E2343B24800A91487 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B48B812233D31F000C9E5C5 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B78CA0F2343B28400A91487 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D60EB234206C1003E166F /* RatingControl.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5B78CA102343B28C00A91487 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				5BA54BAB233E7F8200C654F0 /* StorageManager.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		5B78CA112343B29900A91487 /* NewPlace */ = {
+			isa = PBXGroup;
+			children = (
+				5B48B814233D497900C9E5C5 /* NewPlaceViewController.swift */,
+			);
+			path = NewPlace;
+			sourceTree = "<group>";
+		};
+		5B78CA122343B2A500A91487 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5B79B92A2343ABC400397813 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		5B79B92C2343B17D00397813 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5B48B80E233CEE7F00C9E5C5 /* MainViewController.swift */,
+				5B79B92D2343B19700397813 /* Cell */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5B79B92D2343B19700397813 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5B48B810233D28E300C9E5C5 /* CustomTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5C8DF49B11C8F35769D22FE1 /* Pods */ = {
@@ -225,6 +284,7 @@
 				5BA54BAC233E7F8200C654F0 /* StorageManager.swift in Sources */,
 				5B48B7FD233CEA5600C9E5C5 /* AppDelegate.swift in Sources */,
 				5B48B80F233CEE7F00C9E5C5 /* MainViewController.swift in Sources */,
+				5B79B92B2343ABC400397813 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
